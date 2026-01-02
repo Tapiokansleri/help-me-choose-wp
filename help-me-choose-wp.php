@@ -3,7 +3,7 @@
  * Plugin Name: Help me choose
  * Plugin URI: https://tapiokauranen.com
  * Description: A tool that helps customers to choose the right product or a service.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Tapio Kauranen
  * Author URI: https://tapiokauranen.com
  * License: GPL v2 or later
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define plugin constants
-define('AMV_VERSION', '1.0.1');
+define('AMV_VERSION', '1.0.2');
 define('AMV_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('AMV_PLUGIN_URL', plugin_dir_url(__FILE__));
 

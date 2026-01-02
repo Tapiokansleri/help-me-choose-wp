@@ -933,5 +933,65 @@ jQuery(document).ready(function($) {
             $('#amv-custom-styles').slideUp();
         }
     });
+    
+    // Update checker: Check for updates
+    $(document).on('click', '#amv-check-updates', function() {
+        var $button = $(this);
+        var originalText = $button.text();
+        $button.prop('disabled', true).text('Checking...');
+        
+        $.ajax({
+            url: amvAdmin.ajaxUrl,
+            type: 'POST',
+            data: {
+                action: 'amv_check_updates',
+                nonce: amvAdmin.checkUpdatesNonce || ''
+            },
+            success: function(response) {
+                if (response.success && response.data) {
+                    // Reload page to show updated info
+                    location.reload();
+                } else {
+                    alert('Failed to check for updates: ' + (response.data && response.data.message ? response.data.message : 'Unknown error'));
+                }
+            },
+            error: function() {
+                alert('Failed to check for updates. Please try again.');
+            },
+            complete: function() {
+                $button.prop('disabled', false).text(originalText);
+            }
+        });
+    });
+    
+    // Update checker: Clear update cache
+    $(document).on('click', '#amv-clear-update-cache', function() {
+        var $button = $(this);
+        var originalText = $button.text();
+        $button.prop('disabled', true).text('Clearing...');
+        
+        $.ajax({
+            url: amvAdmin.ajaxUrl,
+            type: 'POST',
+            data: {
+                action: 'amv_clear_update_cache',
+                nonce: amvAdmin.clearUpdateCacheNonce || ''
+            },
+            success: function(response) {
+                if (response.success) {
+                    alert(response.data && response.data.message ? response.data.message : 'Update cache cleared. Refreshing page...');
+                    location.reload();
+                } else {
+                    alert('Failed to clear cache: ' + (response.data && response.data.message ? response.data.message : 'Unknown error'));
+                }
+            },
+            error: function() {
+                alert('Failed to clear cache. Please try again.');
+            },
+            complete: function() {
+                $button.prop('disabled', false).text(originalText);
+            }
+        });
+    });
 });
 

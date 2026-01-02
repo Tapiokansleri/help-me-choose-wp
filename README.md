@@ -67,6 +67,11 @@ GPL v2 or later
 
 See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
+### 1.0.2
+- Added update checker in Settings tab
+- Added GitHub token support for private repositories
+- Improved updater error handling and debugging
+
 ### 1.0.1
 - Added settings link on plugin page
 - Added activation notice with Installation Wizard prompt

@@ -25,6 +25,128 @@ class AMV_Admin {
         add_action('wp_ajax_amv_export_config', array($this, 'ajax_export_config'));
         add_action('wp_ajax_amv_import_config', array($this, 'ajax_import_config'));
         add_action('wp_ajax_amv_generate_starter_pack', array($this, 'ajax_generate_starter_pack'));
+        add_action('wp_ajax_amv_check_updates', array($this, 'ajax_check_updates'));
+        add_action('wp_ajax_amv_clear_update_cache', array($this, 'ajax_clear_update_cache'));
+    }
+    
+    /**
+     * AJAX handler for checking updates
+     */
+    public function ajax_check_updates() {
+        check_ajax_referer('amv_check_updates', 'nonce');
+        
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error(array('message' => __('Permission denied', 'auta-minua-valitsemaan')));
+        }
+        
+        $update_info = $this->check_update_status(true); // Force refresh
+        
+        wp_send_json_success($update_info);
+    }
+    
+    /**
+     * AJAX handler for clearing update cache
+     */
+    public function ajax_clear_update_cache() {
+        check_ajax_referer('amv_clear_update_cache', 'nonce');
+        
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error(array('message' => __('Permission denied', 'auta-minua-valitsemaan')));
+        }
+        
+        $slug = 'help-me-choose-wp';
+        delete_transient('amv_remote_version_' . $slug);
+        delete_site_transient('update_plugins');
+        
+        wp_send_json_success(array('message' => __('Update cache cleared. Please refresh the page.', 'auta-minua-valitsemaan')));
+    }
+    
+    /**
+     * Check update status
+     */
+    private function check_update_status($force_refresh = false) {
+        $slug = 'help-me-choose-wp';
+        $cache_key = 'amv_remote_version_' . $slug;
+        
+        if (!$force_refresh) {
+            $cached_version = get_transient($cache_key);
+            if ($cached_version !== false) {
+                $remote_version = $cached_version;
+            } else {
+                $remote_version = $this->fetch_remote_version();
+            }
+        } else {
+            $remote_version = $this->fetch_remote_version();
+        }
+        
+        if ($remote_version === false) {
+            return array(
+                'success' => false,
+                'error' => __('Unable to fetch version from GitHub. Please check your internet connection and try again.', 'auta-minua-valitsemaan'),
+                'remote_version' => null,
+            );
+        }
+        
+        return array(
+            'success' => true,
+            'remote_version' => $remote_version,
+            'current_version' => AMV_VERSION,
+            'update_available' => version_compare(AMV_VERSION, $remote_version, '<'),
+        );
+    }
+    
+    /**
+     * Fetch remote version from GitHub
+     */
+    private function fetch_remote_version() {
+        $api_url = 'https://api.github.com/repos/Tapiokansleri/help-me-choose-wp/releases/latest';
+        
+        // Get GitHub token from config (optional, for private repos)
+        $config = AMV_Helper::get_config();
+        $github_token = isset($config['github_token']) ? $config['github_token'] : '';
+        
+        $headers = array(
+            'Accept' => 'application/vnd.github.v3+json',
+            'User-Agent' => 'WordPress/' . get_bloginfo('version'),
+        );
+        
+        // Add authentication header if token is provided
+        if (!empty($github_token)) {
+            $headers['Authorization'] = 'token ' . $github_token;
+        }
+        
+        $response = wp_remote_get(
+            $api_url,
+            array(
+                'timeout' => 15,
+                'headers' => $headers,
+            )
+        );
+        
+        if (is_wp_error($response)) {
+            return false;
+        }
+        
+        $response_code = wp_remote_retrieve_response_code($response);
+        if ($response_code !== 200) {
+            return false;
+        }
+        
+        $body = wp_remote_retrieve_body($response);
+        $data = json_decode($body, true);
+        
+        if (!isset($data['tag_name'])) {
+            return false;
+        }
+        
+        // Remove 'v' prefix if present
+        $version = ltrim($data['tag_name'], 'v');
+        
+        // Cache for 12 hours
+        $slug = 'help-me-choose-wp';
+        set_transient('amv_remote_version_' . $slug, $version, 12 * HOUR_IN_SECONDS);
+        
+        return $version;
     }
     
     /**
@@ -918,6 +1040,8 @@ class AMV_Admin {
      * Render settings options
      */
     private function render_settings_options($tracking_enabled = '1', $debug_enabled = '1') {
+        // Check update status
+        $update_info = $this->check_update_status();
         ?>
         <table class="form-table">
             <tr>
@@ -940,7 +1064,75 @@ class AMV_Admin {
                     <p class="description"><?php _e('When enabled, logged-in administrators will see debug information at the bottom of the form.', 'auta-minua-valitsemaan'); ?></p>
                 </td>
             </tr>
+            <tr>
+                <th><label><?php _e('GitHub Token (Optional)', 'auta-minua-valitsemaan'); ?></label></th>
+                <td>
+                    <?php
+                    $config = AMV_Helper::get_config();
+                    $github_token = isset($config['github_token']) ? esc_attr($config['github_token']) : '';
+                    ?>
+                    <input type="password" name="github_token" value="<?php echo $github_token; ?>" class="regular-text" placeholder="<?php _e('ghp_xxxxxxxxxxxx', 'auta-minua-valitsemaan'); ?>">
+                    <p class="description">
+                        <?php _e('Required only for private repositories. Create a Personal Access Token with "repo" scope at', 'auta-minua-valitsemaan'); ?> 
+                        <a href="https://github.com/settings/tokens" target="_blank">https://github.com/settings/tokens</a>.
+                        <?php _e('Leave empty if your repository is public.', 'auta-minua-valitsemaan'); ?>
+                    </p>
+                </td>
+            </tr>
         </table>
+        
+        <div class="amv-update-checker" style="margin-top: 30px; padding: 20px; background: #fff; border: 1px solid #ddd; border-radius: 4px;">
+            <h3><?php _e('Update Checker', 'auta-minua-valitsemaan'); ?></h3>
+            <p><?php _e('Check if updates are available for this plugin.', 'auta-minua-valitsemaan'); ?></p>
+            
+            <table class="form-table">
+                <tr>
+                    <th><?php _e('Current Version', 'auta-minua-valitsemaan'); ?></th>
+                    <td><strong><?php echo esc_html(AMV_VERSION); ?></strong></td>
+                </tr>
+                <tr>
+                    <th><?php _e('Latest Version', 'auta-minua-valitsemaan'); ?></th>
+                    <td>
+                        <?php if ($update_info['success']): ?>
+                            <strong><?php echo esc_html($update_info['remote_version']); ?></strong>
+                            <?php 
+                            $comparison = version_compare(AMV_VERSION, $update_info['remote_version'], '<');
+                            if ($comparison): ?>
+                                <span style="color: #d63638; margin-left: 10px;"><?php _e('Update available!', 'auta-minua-valitsemaan'); ?></span>
+                            <?php else: ?>
+                                <span style="color: #00a32a; margin-left: 10px;"><?php _e('You are up to date.', 'auta-minua-valitsemaan'); ?></span>
+                            <?php endif; ?>
+                            <p class="description" style="margin-top: 5px;">
+                                <?php 
+                                printf(
+                                    __('Current: %s | Remote: %s | Comparison: %s', 'auta-minua-valitsemaan'),
+                                    esc_html(AMV_VERSION),
+                                    esc_html($update_info['remote_version']),
+                                    $comparison ? __('Update needed', 'auta-minua-valitsemaan') : __('No update needed', 'auta-minua-valitsemaan')
+                                );
+                                ?>
+                            </p>
+                        <?php else: ?>
+                            <span style="color: #d63638;"><?php echo esc_html($update_info['error']); ?></span>
+                        <?php endif; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><?php _e('GitHub Repository', 'auta-minua-valitsemaan'); ?></th>
+                    <td>
+                        <a href="https://github.com/Tapiokansleri/help-me-choose-wp" target="_blank">https://github.com/Tapiokansleri/help-me-choose-wp</a>
+                    </td>
+                </tr>
+            </table>
+            
+            <p>
+                <button type="button" class="button" id="amv-check-updates"><?php _e('Check for Updates', 'auta-minua-valitsemaan'); ?></button>
+                <button type="button" class="button" id="amv-clear-update-cache"><?php _e('Clear Update Cache', 'auta-minua-valitsemaan'); ?></button>
+            </p>
+            <p class="description">
+                <?php _e('WordPress checks for updates automatically every 12 hours. Use "Clear Update Cache" to force an immediate check.', 'auta-minua-valitsemaan'); ?>
+            </p>
+        </div>
         
         <div class="amv-settings-import-export" style="margin-top: 30px; padding: 20px; background: #fff; border: 1px solid #ddd; border-radius: 4px;">
             <h3><?php _e('Import / Export Configuration', 'auta-minua-valitsemaan'); ?></h3>
@@ -1317,6 +1509,7 @@ class AMV_Admin {
             'styles' => AMV_Helper::sanitize_styles($styles),
             'tracking_enabled' => isset($_POST['tracking_enabled']) ? '1' : '0',
             'debug_enabled' => isset($_POST['debug_enabled']) ? '1' : '0',
+            'github_token' => isset($_POST['github_token']) ? sanitize_text_field($_POST['github_token']) : '',
         );
         
         AMV_Helper::save_config($config);

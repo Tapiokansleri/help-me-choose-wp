@@ -76,6 +76,8 @@ class AMV_Assets {
             'exportConfigNonce' => wp_create_nonce('amv_export_config'),
             'importConfigNonce' => wp_create_nonce('amv_import_config'),
             'generateStarterPackNonce' => wp_create_nonce('amv_generate_starter_pack'),
+            'checkUpdatesNonce' => wp_create_nonce('amv_check_updates'),
+            'clearUpdateCacheNonce' => wp_create_nonce('amv_clear_update_cache'),
             'stepCounter' => $step_counter,
             'config' => $config,
             'postTypes' => $post_types_array,
