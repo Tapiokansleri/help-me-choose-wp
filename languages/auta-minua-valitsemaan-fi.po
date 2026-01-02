@@ -702,6 +702,26 @@ msgstr "Näytä tiivistelmä"
 msgid "Select which elements to display in recommendation cards"
 msgstr "Valitse mitkä elementit näytetään suosituskorteissa"
 
+#: help-me-choose-wp.php:35
+msgid "Settings"
+msgstr "Asetukset"
+
+#: help-me-choose-wp.php:45
+msgid "has been activated!"
+msgstr "on aktivoitu!"
+
+#: help-me-choose-wp.php:48
+msgid "Get started quickly with our"
+msgstr "Aloita nopeasti"
+
+#: help-me-choose-wp.php:52
+msgid "or"
+msgstr "tai"
+
+#: help-me-choose-wp.php:53
+msgid "configure manually"
+msgstr "määritä manuaalisesti"
+
 #: includes/class-amv-admin.php:530
 msgid "Style Preset"
 msgstr "Tyylivalmiste"

@@ -31,7 +31,47 @@ require_once AMV_PLUGIN_DIR . 'includes/class-amv-updater.php';
  */
 register_activation_hook(__FILE__, function() {
     AMV_Database::create_table();
+    
+    // Set a transient to show activation notice
+    set_transient('amv_activation_notice', true, 30);
 });
+
+/**
+ * Add settings link to plugin actions
+ */
+function amv_add_plugin_action_links($links) {
+    $settings_link = '<a href="' . admin_url('tools.php?page=auta-minua-valitsemaan') . '">' . __('Settings', 'auta-minua-valitsemaan') . '</a>';
+    array_unshift($links, $settings_link);
+    return $links;
+}
+add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'amv_add_plugin_action_links');
+
+/**
+ * Show activation notice
+ */
+function amv_activation_notice() {
+    if (get_transient('amv_activation_notice')) {
+        delete_transient('amv_activation_notice');
+        ?>
+        <div class="notice notice-success is-dismissible">
+            <p>
+                <strong><?php _e('Help me choose', 'auta-minua-valitsemaan'); ?></strong> <?php _e('has been activated!', 'auta-minua-valitsemaan'); ?>
+            </p>
+            <p>
+                <?php _e('Get started quickly with our', 'auta-minua-valitsemaan'); ?> 
+                <a href="<?php echo admin_url('tools.php?page=auta-minua-valitsemaan&tab=wizard'); ?>" class="button button-primary" style="margin-left: 5px;">
+                    <?php _e('Installation Wizard', 'auta-minua-valitsemaan'); ?>
+                </a>
+                <?php _e('or', 'auta-minua-valitsemaan'); ?> 
+                <a href="<?php echo admin_url('tools.php?page=auta-minua-valitsemaan'); ?>">
+                    <?php _e('configure manually', 'auta-minua-valitsemaan'); ?>
+                </a>.
+            </p>
+        </div>
+        <?php
+    }
+}
+add_action('admin_notices', 'amv_activation_notice');
 
 /**
  * Load plugin text domain for translations
