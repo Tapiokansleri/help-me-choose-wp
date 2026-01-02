@@ -3,7 +3,7 @@ Contributors: tapiokauranen
 Tags: decision-tree, form, wizard, recommendation, product-selector
 Requires at least: 5.0
 Tested up to: 6.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -36,6 +36,10 @@ Use the Installation Wizard for quick setup with AI assistance, or manually conf
 
 == Changelog ==
 
+= 1.0.1 =
+* Added settings link on plugin page
+* Added activation notice with Installation Wizard prompt
+
 = 1.0.0 =
 * Initial release
 * Multi-step decision tree functionality
@@ -46,6 +50,9 @@ Use the Installation Wizard for quick setup with AI assistance, or manually conf
 
 == Upgrade Notice ==
 
+= 1.0.1 =
+Added convenient settings link and activation notice for better user experience.
+
 = 1.0.0 =
-Initial release of Auta minua valitsemaan.
+Initial release of Help me choose.
 

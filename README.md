@@ -65,6 +65,12 @@ GPL v2 or later
 
 ## Changelog
 
+See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
+
+### 1.0.1
+- Added settings link on plugin page
+- Added activation notice with Installation Wizard prompt
+
 ### 1.0.0
 - Initial release
 - Multi-step decision tree functionality
