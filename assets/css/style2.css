@@ -1,0 +1,55 @@
+/* Style 2 - Clean with Blue Accents */
+
+.amv-form-container {
+    width: 100% !important;
+    padding: 0 !important;
+}
+
+.amv-step {
+    border: 0 !important;
+    border-radius: 0 !important;
+    background-color: #f8f9fa !important;
+    color: #212529 !important;
+    padding: 40px !important;
+}
+
+.amv-step-title {
+    color: #212529 !important;
+}
+
+.amv-step-description {
+    color: #212529 !important;
+}
+
+.amv-option {
+    border: 2px solid #0073aa !important;
+    border-radius: 4px !important;
+    background-color: #ffffff !important;
+    color: #0073aa !important;
+    padding: 25px !important;
+}
+
+.amv-option:hover {
+    background-color: #e7f3ff !important;
+}
+
+.amv-option-label {
+    color: #0073aa !important;
+}
+
+.amv-option-description {
+    color: #0073aa !important;
+}
+
+.amv-option-image img {
+    max-width: 250px !important;
+    height: auto !important;
+}
+
+@media (max-width: 767px) {
+    .amv-option-image img {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+}
+

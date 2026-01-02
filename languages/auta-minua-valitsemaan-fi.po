@@ -1,0 +1,727 @@
+# Translation file for Auta minua valitsemaan plugin
+# Copyright (C) 2024 Tapio Kauranen
+# This file is distributed under the same license as the Auta minua valitsemaan plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Auta minua valitsemaan 1.0.0\n"
+"Report-Msgid-Bugs-To: https://tapiokauranen.com\n"
+"POT-Creation-Date: 2024-12-30 12:00+0000\n"
+"PO-Revision-Date: 2024-12-30 12:00+0000\n"
+"Last-Translator: Tapio Kauranen <info@tapiokauranen.com>\n"
+"Language-Team: Finnish\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/class-amv-admin.php:30
+#: includes/class-amv-admin.php:31
+msgid "Auta minua valitsemaan"
+msgstr "Auta minua valitsemaan"
+
+#: includes/class-amv-admin.php:45
+msgid "Settings saved."
+msgstr "Asetukset tallennettu."
+
+#: includes/class-amv-admin.php:56
+msgid "Steps Configuration"
+msgstr "Vaiheiden konfigurointi"
+
+#: includes/class-amv-admin.php:57
+msgid "Configure the steps of your decision tree. Each option can have a target step - when selected, it will jump to that specific step. If no target is set, it will go to the next sequential step. The recommendation will be shown after the last step."
+msgstr "Määritä päätöspuun vaiheet. Jokaisella vaihtoehdolla voi olla kohdevaihe - kun se valitaan, siirrytään kyseiseen vaiheeseen. Jos kohdetta ei ole asetettu, siirrytään seuraavaan peräkkäiseen vaiheeseen. Suositus näytetään viimeisen vaiheen jälkeen."
+
+#: includes/class-amv-admin.php:60
+msgid "Expand All"
+msgstr "Laajenna kaikki"
+
+#: includes/class-amv-admin.php:61
+msgid "Collapse All"
+msgstr "Sulje kaikki"
+
+#: includes/class-amv-admin.php:77
+msgid "Add Step"
+msgstr "Lisää vaihe"
+
+#: includes/class-amv-admin.php:81
+msgid "Recommendations"
+msgstr "Suositukset"
+
+#: includes/class-amv-admin.php:82
+msgid "Define the recommendation that will be shown after completing all steps. Only one recommendation will be displayed."
+msgstr "Määritä suositus, joka näytetään kaikkien vaiheiden suorittamisen jälkeen. Vain yksi suositus näytetään."
+
+#: includes/class-amv-admin.php:94
+msgid "Add Recommendation"
+msgstr "Lisää suositus"
+
+#: includes/class-amv-admin.php:98
+msgid "Save Configuration"
+msgstr "Tallenna konfiguraatio"
+
+#: includes/class-amv-admin.php:117
+#: includes/class-amv-assets.php:60
+msgid "Step"
+msgstr "Vaihe"
+
+#: includes/class-amv-admin.php:122
+#: includes/class-amv-assets.php:61
+msgid "Remove"
+msgstr "Poista"
+
+#: includes/class-amv-admin.php:127
+#: includes/class-amv-assets.php:62
+msgid "Step Title"
+msgstr "Vaiheen otsikko"
+
+#: includes/class-amv-admin.php:129
+#: includes/class-amv-assets.php:63
+msgid "Enter step title"
+msgstr "Syötä vaiheen otsikko"
+
+#: includes/class-amv-admin.php:133
+#: includes/class-amv-assets.php:64
+msgid "Options"
+msgstr "Vaihtoehdot"
+
+#: includes/class-amv-admin.php:146
+#: includes/class-amv-assets.php:65
+msgid "Add Option"
+msgstr "Lisää vaihtoehto"
+
+#: includes/class-amv-admin.php:180
+#: includes/class-amv-assets.php:81
+msgid "Add Image"
+msgstr "Lisää kuva"
+
+#: includes/class-amv-admin.php:181
+#: includes/class-amv-assets.php:82
+msgid "Remove Image"
+msgstr "Poista kuva"
+
+#: includes/class-amv-admin.php:183
+#: includes/class-amv-assets.php:66
+msgid "Option label"
+msgstr "Vaihtoehdon teksti"
+
+#: includes/class-amv-admin.php:185
+#: includes/class-amv-assets.php:68
+msgid "Next Step (Sequential)"
+msgstr "Seuraava vaihe (peräkkäinen)"
+
+#: includes/class-amv-admin.php:197
+#: includes/class-amv-assets.php:69
+msgid "Jump to Recommendation"
+msgstr "Siirry suosituksiin"
+
+#: includes/class-amv-admin.php:200
+#: includes/class-amv-assets.php:70
+msgid "Recommendations:"
+msgstr "Suositukset:"
+
+#: includes/class-amv-admin.php:213
+#: includes/class-amv-assets.php:71
+msgid "No recommendations configured yet."
+msgstr "Suosituksia ei ole vielä määritelty."
+
+#: includes/class-amv-admin.php:246
+#: includes/class-amv-assets.php:72
+msgid "Recommendation Title"
+msgstr "Suosituksen otsikko"
+
+#: includes/class-amv-admin.php:252
+#: includes/class-amv-assets.php:74
+msgid "Content Type"
+msgstr "Sisällön tyyppi"
+
+#: includes/class-amv-admin.php:255
+#: includes/class-amv-assets.php:75
+msgid "Plain Text"
+msgstr "Pelkkä teksti"
+
+#: includes/class-amv-admin.php:265
+#: includes/class-amv-assets.php:76
+msgid "Select Content"
+msgstr "Valitse sisältö"
+
+#: includes/class-amv-admin.php:269
+#: includes/class-amv-assets.php:78
+msgid "Search..."
+msgstr "Etsi..."
+
+#: includes/class-amv-admin.php:270
+#: includes/class-amv-assets.php:79
+msgid "Clear"
+msgstr "Tyhjennä"
+
+#: includes/class-amv-admin.php:276
+#: includes/class-amv-assets.php:77
+msgid "Content"
+msgstr "Sisältö"
+
+#: includes/class-amv-admin.php:278
+#: includes/class-amv-assets.php:73
+msgid "Recommendation content"
+msgstr "Suosituksen sisältö"
+
+#: includes/class-amv-admin.php:291
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Sinulla ei ole riittäviä oikeuksia käyttää tätä sivua."
+
+#: includes/class-amv-frontend.php:42
+msgid "Please configure the form in Tools → Help me choose"
+msgstr "Ole hyvä ja määritä lomake Työkalut → Help me choose"
+
+#: includes/class-amv-ajax.php:36
+msgid "Please enter a search term"
+msgstr "Ole hyvä ja syötä hakusana"
+
+#: includes/class-amv-ajax.php:73
+msgid "Invalid post ID"
+msgstr "Virheellinen artikkelin tunniste"
+
+#: includes/class-amv-ajax.php:79
+msgid "Post not found"
+msgstr "Artikkelia ei löytynyt"
+
+#: includes/class-amv-ajax.php:108
+msgid "Read more"
+msgstr "Lue lisää"
+
+#: includes/class-amv-ajax.php
+msgid "Buy"
+msgstr "Osta"
+
+#: includes/class-amv-assets.php
+msgid "Sinun valintoihin sopivat ratkaisut"
+msgstr "Sinun valintoihin sopivat ratkaisut"
+
+#: includes/class-amv-assets.php:67
+msgid "Target Step"
+msgstr "Kohdevaihe"
+
+#: includes/class-amv-assets.php:80
+msgid "No results found"
+msgstr "Tuloksia ei löytynyt"
+
+#: includes/class-amv-assets.php:83
+msgid "Select Image"
+msgstr "Valitse kuva"
+
+#: includes/class-amv-assets.php:84
+msgid "Use this image"
+msgstr "Käytä tätä kuvaa"
+
+#: includes/class-amv-assets.php:119
+msgid "Loading..."
+msgstr "Ladataan..."
+
+#: includes/class-amv-assets.php:120
+msgid "Error loading content"
+msgstr "Virhe sisällön latauksessa"
+
+#: includes/class-amv-assets.php:158
+msgid "Reset Form"
+msgstr "Nollaa lomake"
+
+#: includes/class-amv-admin.php:98
+msgid "Styling Options"
+msgstr "Tyyliasetukset"
+
+#: includes/class-amv-admin.php:99
+msgid "Customize the appearance of your decision tree form."
+msgstr "Mukauta päätöspuun lomakkeen ulkoasua."
+
+#: includes/class-amv-admin.php:105
+msgid "Step Styling"
+msgstr "Vaiheen tyylit"
+
+#: includes/class-amv-admin.php:108
+msgid "Enable Borders"
+msgstr "Ota reunat käyttöön"
+
+#: includes/class-amv-admin.php:111
+msgid "Show borders on steps"
+msgstr "Näytä reunat vaiheissa"
+
+#: includes/class-amv-admin.php:115
+msgid "Border Color"
+msgstr "Reunan väri"
+
+#: includes/class-amv-admin.php:120
+msgid "Border Width (px)"
+msgstr "Reunan leveys (px)"
+
+#: includes/class-amv-admin.php:125
+msgid "Border Radius (px)"
+msgstr "Reunan pyöristys (px)"
+
+#: includes/class-amv-admin.php:130
+msgid "Background Color"
+msgstr "Taustaväri"
+
+#: includes/class-amv-admin.php:135
+msgid "Text Color"
+msgstr "Tekstin väri"
+
+#: includes/class-amv-admin.php:140
+msgid "Padding (px)"
+msgstr "Sisennys (px)"
+
+#: includes/class-amv-admin.php:145
+msgid "Option Card Styling"
+msgstr "Vaihtoehtokortin tyylit"
+
+#: includes/class-amv-admin.php:148
+msgid "Show borders on option cards"
+msgstr "Näytä reunat vaihtoehtokorteissa"
+
+#: includes/class-amv-admin.php:153
+msgid "Hover Background Color"
+msgstr "Hover-taustaväri"
+
+#: includes/class-amv-admin.php:158
+msgid "Image Settings"
+msgstr "Kuvan asetukset"
+
+#: includes/class-amv-admin.php:161
+msgid "Option Image Size (px)"
+msgstr "Vaihtoehdon kuvan koko (px)"
+
+#: includes/class-amv-admin.php:164
+msgid "Maximum width/height for option images"
+msgstr "Vaihtoehtokuvien maksimileveys/korkeus"
+
+#: includes/class-amv-admin.php:122
+msgid "Container Styling"
+msgstr "Säiliön tyylit"
+
+#: includes/class-amv-admin.php:125
+msgid "Width"
+msgstr "Leveys"
+
+#: includes/class-amv-admin.php:130
+msgid "Container width (default: 100%)"
+msgstr "Säiliön leveys (oletus: 100%)"
+
+#: includes/class-amv-admin.php:135
+msgid "Container padding (default: 0)"
+msgstr "Säiliön sisennys (oletus: 0)"
+
+#: includes/class-amv-admin.php:56
+msgid "Steps"
+msgstr "Vaiheet"
+
+#: includes/class-amv-admin.php:62
+msgid "Styling"
+msgstr "Tyylit"
+
+#: includes/class-amv-admin.php:66
+msgid "Statistics"
+msgstr "Tilastot"
+
+#: includes/class-amv-admin.php:130
+msgid "Usage Statistics"
+msgstr "Käyttötilastot"
+
+#: includes/class-amv-admin.php:131
+msgid "View statistics about how users interact with your decision tree tool."
+msgstr "Näytä tilastot siitä, miten käyttäjät käyttävät päätöspuutyökalua."
+
+#: includes/class-amv-admin.php:137
+msgid "Total Users"
+msgstr "Käyttäjät yhteensä"
+
+#: includes/class-amv-admin.php:140
+msgid "Unique users who have used the tool"
+msgstr "Yksilölliset käyttäjät, jotka ovat käyttäneet työkalua"
+
+#: includes/class-amv-admin.php:145
+msgid "Completed"
+msgstr "Valmistuneet"
+
+#: includes/class-amv-admin.php:148
+msgid "%s%% completion rate"
+msgstr "%s%% valmistumisaste"
+
+#: includes/class-amv-admin.php:153
+msgid "Abandoned"
+msgstr "Keskeytetyt"
+
+#: includes/class-amv-admin.php:156
+msgid "%s%% abandonment rate"
+msgstr "%s%% keskeytysaste"
+
+#: includes/class-amv-admin.php:161
+msgid "In Progress"
+msgstr "Käynnissä"
+
+#: includes/class-amv-admin.php:164
+msgid "Users currently using the tool"
+msgstr "Käyttäjät, jotka käyttävät työkalua tällä hetkellä"
+
+#: includes/class-amv-admin.php:161
+msgid "Database table not found. Please deactivate and reactivate the plugin to create it."
+msgstr "Tietokantataulua ei löydy. Poista ja aktivoi lisäosa uudelleen luodaksesi sen."
+
+#: includes/class-amv-admin.php:162
+msgid "Create Table Now"
+msgstr "Luo taulu nyt"
+
+#: includes/class-amv-admin.php:30
+msgid "Permission denied"
+msgstr "Käyttöoikeus evätty"
+
+#: includes/class-amv-admin.php:37
+msgid "Table created successfully"
+msgstr "Taulu luotiin onnistuneesti"
+
+#: includes/class-amv-admin.php:109
+msgid "Settings"
+msgstr "Asetukset"
+
+#: includes/class-amv-admin.php:112
+msgid "Shortcode"
+msgstr "Lyhytkoodi"
+
+#: includes/class-amv-admin.php:200
+msgid "Configure plugin settings and options."
+msgstr "Määritä lisäosan asetukset ja vaihtoehdot."
+
+#: includes/class-amv-admin.php:423
+msgid "Enable Tracking"
+msgstr "Ota seuranta käyttöön"
+
+#: includes/class-amv-admin.php:427
+msgid "Track user interactions and statistics"
+msgstr "Seuraa käyttäjien vuorovaikutuksia ja tilastoja"
+
+#: includes/class-amv-admin.php:429
+msgid "When disabled, no user data will be tracked or stored."
+msgstr "Kun poistettu käytöstä, käyttäjien tietoja ei seurata tai tallenneta."
+
+#: includes/class-amv-admin.php:433
+msgid "Show Debug Information"
+msgstr "Näytä debug-tiedot"
+
+#: includes/class-amv-admin.php:437
+msgid "Display debug information on the frontend (admin only)"
+msgstr "Näytä debug-tiedot etusivulla (vain ylläpitäjille)"
+
+#: includes/class-amv-admin.php:439
+msgid "When enabled, logged-in administrators will see debug information at the bottom of the form."
+msgstr "Kun käytössä, kirjautuneet ylläpitäjät näkevät debug-tiedot lomakkeen alaosassa."
+
+#: includes/class-amv-admin.php:445
+msgid "Danger Zone"
+msgstr "Vaaravyöhyke"
+
+#: includes/class-amv-admin.php:446
+msgid "Reset all tracking data. This action cannot be undone!"
+msgstr "Nollaa kaikki seurantatiedot. Tätä toimintoa ei voi perua!"
+
+#: includes/class-amv-admin.php:448
+msgid "Reset Database"
+msgstr "Nollaa tietokanta"
+
+#: includes/class-amv-admin.php:55
+msgid "Database reset successfully"
+msgstr "Tietokanta nollattiin onnistuneesti"
+
+#: includes/class-amv-admin.php:57
+msgid "Failed to reset database"
+msgstr "Tietokannan nollaus epäonnistui"
+
+#: includes/class-amv-admin.php:519
+msgid "Step Description"
+msgstr "Vaiheen kuvaus"
+
+#: includes/class-amv-admin.php:521
+msgid "Enter step description (optional)"
+msgstr "Syötä vaiheen kuvaus (valinnainen)"
+
+#: includes/class-amv-admin.php:522
+msgid "Optional text that appears under the step title"
+msgstr "Valinnainen teksti, joka näkyy vaiheen otsikon alla"
+
+#: includes/class-amv-admin.php:577
+msgid "Option description (optional)"
+msgstr "Vaihtoehdon kuvaus (valinnainen)"
+
+#: includes/class-amv-admin.php:213
+msgid "Use this shortcode to display the decision tree form on any page or post."
+msgstr "Käytä tätä lyhytkoodia näyttääksesi päätöspuulomakkeen millä tahansa sivulla tai artikkelissa."
+
+#: includes/class-amv-admin.php:222
+msgid "Copy"
+msgstr "Kopioi"
+
+#: includes/class-amv-admin.php:226
+msgid "Shortcode copied to clipboard!"
+msgstr "Lyhytkoodi kopioitu leikepöydälle!"
+
+#: includes/class-amv-admin.php:229
+msgid "Paste this shortcode into any page or post where you want to display the decision tree form."
+msgstr "Liitä tämä lyhytkoodi mihin tahansa sivulle tai artikkeliin, jossa haluat näyttää päätöspuulomakkeen."
+
+#: includes/class-amv-frontend.php:68
+msgid "Debug Information (Admin Only)"
+msgstr "Debug-tiedot (vain ylläpitäjille)"
+
+#: includes/class-amv-admin.php:667
+msgid "Description"
+msgstr "Kuvaus"
+
+#: includes/class-amv-admin.php:669
+msgid "Recommendation description (supports shortcodes)"
+msgstr "Suosituksen kuvaus (tukee lyhytkoodeja)"
+
+#: includes/class-amv-admin.php:670
+msgid "Optional description text for this recommendation bundle. You can use shortcodes here."
+msgstr "Valinnainen kuvaus teksti tälle suosituspaketille. Voit käyttää lyhytkoodeja täällä."
+
+#: includes/class-amv-admin.php:674
+msgid "Select Content Items"
+msgstr "Valitse sisältökohteet"
+
+#: includes/class-amv-admin.php:678
+msgid "-- Select Post Type --"
+msgstr "-- Valitse artikkelityyppi --"
+
+#: includes/class-amv-admin.php:685
+msgid "Search for pages, products, or posts..."
+msgstr "Etsi sivuja, tuotteita tai artikkeleita..."
+
+#: includes/class-amv-admin.php:689
+msgid "Selected Items:"
+msgstr "Valitut kohteet:"
+
+#: includes/class-amv-admin.php:697
+msgid "No items selected. Search and add items above."
+msgstr "Kohteita ei ole valittu. Etsi ja lisää kohteita yllä."
+
+#: includes/class-amv-admin.php:700
+msgid "Search and select multiple pages, products, or posts to include in this recommendation bundle."
+msgstr "Etsi ja valitse useita sivuja, tuotteita tai artikkeleita sisällytettäväksi tähän suosituspakettiin."
+
+#: includes/class-amv-admin.php:584
+msgid "-- Select Target Step --"
+msgstr "-- Valitse kohdevaihe --"
+
+#: includes/class-amv-admin.php:695
+msgid "Option \"%s\" in step \"%s\" must have a target step selected."
+msgstr "Vaihtoehdon \"%s\" vaiheessa \"%s\" on valittava kohdevaihe."
+
+#: includes/class-amv-admin.php:740
+msgid "Option \"%s\" in step \"%s\" jumps to recommendation but no recommendations are selected. Please select at least one recommendation."
+msgstr "Vaihtoehto \"%s\" vaiheessa \"%s\" siirtyy suosituksiin, mutta yhtään suositusta ei ole valittu. Valitse vähintään yksi suositus."
+
+#: includes/class-amv-admin.php:210
+msgid "Import / Export Configuration"
+msgstr "Tuo / Vie konfiguraatio"
+
+#: includes/class-amv-admin.php:214
+msgid "Export your steps and recommendations configuration as JSON, or import a previously exported configuration."
+msgstr "Vie vaiheet ja suositukset JSON-muodossa tai tuo aiemmin viedyt konfiguraatiot."
+
+#: includes/class-amv-admin.php:217
+msgid "Export Configuration"
+msgstr "Vie konfiguraatio"
+
+#: includes/class-amv-admin.php:220
+msgid "Export Configuration as JSON"
+msgstr "Vie konfiguraatio JSON-muodossa"
+
+#: includes/class-amv-admin.php:221
+msgid "Download your current steps and recommendations configuration as a JSON file."
+msgstr "Lataa nykyiset vaiheet ja suositukset JSON-tiedostona."
+
+#: includes/class-amv-admin.php:225
+msgid "Import Configuration"
+msgstr "Tuo konfiguraatio"
+
+#: includes/class-amv-admin.php:226
+msgid "Paste JSON configuration here..."
+msgstr "Liitä JSON-konfiguraatio tähän..."
+
+#: includes/class-amv-admin.php:227
+msgid "Paste a JSON configuration exported from this plugin. This will replace your current configuration."
+msgstr "Liitä tästä lisäosasta viedyt JSON-konfiguraatiot. Tämä korvaa nykyisen konfiguraatiosi."
+
+
+#: includes/class-amv-assets.php:111
+msgid "Exporting..."
+msgstr "Viedään..."
+
+#: includes/class-amv-assets.php:112
+msgid "Configuration exported successfully!"
+msgstr "Konfiguraatio viety onnistuneesti!"
+
+#: includes/class-amv-assets.php:113
+msgid "Failed to export configuration."
+msgstr "Konfiguraation vienti epäonnistui."
+
+#: includes/class-amv-assets.php:114
+msgid "Importing..."
+msgstr "Tuodaan..."
+
+#: includes/class-amv-assets.php:115
+msgid "Configuration imported successfully!"
+msgstr "Konfiguraatio tuotu onnistuneesti!"
+
+#: includes/class-amv-assets.php:116
+msgid "Failed to import configuration."
+msgstr "Konfiguraation tuonti epäonnistui."
+
+#: includes/class-amv-assets.php:117
+msgid "Please paste JSON configuration data."
+msgstr "Liitä JSON-konfiguraatiotiedot."
+
+#: includes/class-amv-assets.php:118
+msgid "This will replace your current configuration. Are you sure?"
+msgstr "Tämä korvaa nykyisen konfiguraatiosi. Oletko varma?"
+
+#: includes/class-amv-assets.php:119
+msgid "Steps imported:"
+msgstr "Tuodut vaiheet:"
+
+#: includes/class-amv-assets.php:120
+msgid "Recommendations imported:"
+msgstr "Tuodut suositukset:"
+
+#: includes/class-amv-admin.php:556
+msgid "Generate Starter Pack"
+msgstr "Luo aloituspaketti"
+
+#: includes/class-amv-admin.php:558
+msgid "Generate Starter Pack JSON"
+msgstr "Luo aloituspaketti JSON"
+
+#: includes/class-amv-admin.php:559
+msgid "Generate a JSON file containing all pages, posts, custom post types, and products (if WooCommerce is installed) from your website. This can be used by AI tools to generate decision tree configurations."
+msgstr "Luo JSON-tiedosto, joka sisältää kaikki sivut, artikkelit, mukautetut artikkelityypit ja tuotteet (jos WooCommerce on asennettuna) verkkosivustoltasi. Tätä voidaan käyttää AI-työkaluissa päätöspuukonfiguraatioiden luomiseen."
+
+#: includes/class-amv-assets.php:121
+msgid "Generating..."
+msgstr "Luodaan..."
+
+#: includes/class-amv-assets.php:122
+msgid "Starter pack generated successfully!"
+msgstr "Aloituspaketti luotu onnistuneesti!"
+
+#: includes/class-amv-assets.php:123
+msgid "Failed to generate starter pack."
+msgstr "Aloituspaketin luonti epäonnistui."
+
+#: includes/class-amv-admin.php:203
+msgid "Installation Wizard"
+msgstr "Asennusohjattu"
+
+#: includes/class-amv-admin.php:335
+msgid "Follow these simple steps to set up your decision tree with AI assistance."
+msgstr "Seuraa näitä yksinkertaisia vaiheita asentaaksesi päätöspuusi AI-avulla."
+
+#: includes/class-amv-admin.php:342
+msgid "Download a JSON file containing all your pages, posts, custom post types, products, and menu structure."
+msgstr "Lataa JSON-tiedosto, joka sisältää kaikki sivusi, artikkelisi, mukautetut artikkelityypit, tuotteet ja valikkorakenteen."
+
+#: includes/class-amv-admin.php:345
+msgid "Starter pack generated!"
+msgstr "Aloituspaketti luotu!"
+
+#: includes/class-amv-admin.php:352
+msgid "Upload to AI Tool"
+msgstr "Lataa AI-työkaluun"
+
+#: includes/class-amv-admin.php:355
+msgid "Open the AI configuration generator and upload your starter pack file. The tool will analyze your website and generate a decision tree configuration."
+msgstr "Avaa AI-konfiguraatiogeneraattori ja lataa aloituspakkisi. Työkalu analysoi verkkosivustosi ja luo päätöspuukonfiguraation."
+
+#: includes/class-amv-admin.php:358
+msgid "Open AI Configuration Generator"
+msgstr "Avaa AI-konfiguraatiogeneraattori"
+
+#: includes/class-amv-admin.php:361
+msgid "After uploading your starter pack, copy the generated JSON configuration."
+msgstr "Kun olet ladannut aloituspakkisi, kopioi generoitu JSON-konfiguraatio."
+
+#: includes/class-amv-admin.php:367
+msgid "Paste Generated JSON"
+msgstr "Liitä generoitu JSON"
+
+#: includes/class-amv-admin.php:370
+msgid "Paste the JSON configuration generated by the AI tool below."
+msgstr "Liitä alla olevaan kenttään AI-työkalun generoima JSON-konfiguraatio."
+
+#: includes/class-amv-admin.php:380
+msgid "Voila!"
+msgstr "Valmis!"
+
+#: includes/class-amv-admin.php:383
+msgid "Your decision tree is now configured! You can customize it further in the Steps and Recommendations tabs."
+msgstr "Päätöspuusi on nyt konfiguroitu! Voit muokata sitä edelleen Vaiheet- ja Suositukset-välilehdillä."
+
+#: includes/class-amv-assets.php:124
+msgid "Go to Steps"
+msgstr "Siirry vaiheisiin"
+
+#: includes/class-amv-assets.php:125
+msgid "Go to Recommendations"
+msgstr "Siirry suosituksiin"
+
+#: includes/class-amv-admin.php:790
+msgid "Results Settings"
+msgstr "Tulosten asetukset"
+
+#: includes/class-amv-admin.php:793
+msgid "Excerpt Length (characters)"
+msgstr "Tiivistelmän pituus (merkkejä)"
+
+#: includes/class-amv-admin.php:796
+msgid "Maximum number of characters for recommendation excerpts (0 = no limit)"
+msgstr "Suosituskorttien tiivistelmien maksimipituus merkkeinä (0 = ei rajaa)"
+
+#: includes/class-amv-admin.php:800
+msgid "What to Show"
+msgstr "Mitä näytetään"
+
+#: includes/class-amv-admin.php:803
+msgid "Show Title"
+msgstr "Näytä otsikko"
+
+#: includes/class-amv-admin.php:806
+msgid "Show Image"
+msgstr "Näytä kuva"
+
+#: includes/class-amv-admin.php:809
+msgid "Show Excerpt"
+msgstr "Näytä tiivistelmä"
+
+#: includes/class-amv-admin.php:812
+msgid "Select which elements to display in recommendation cards"
+msgstr "Valitse mitkä elementit näytetään suosituskorteissa"
+
+#: includes/class-amv-admin.php:530
+msgid "Style Preset"
+msgstr "Tyylivalmiste"
+
+#: includes/class-amv-admin.php:533
+msgid "Style 1"
+msgstr "Tyyli 1"
+
+#: includes/class-amv-admin.php:534
+msgid "Style 2"
+msgstr "Tyyli 2"
+
+#: includes/class-amv-admin.php:535
+msgid "Style 3"
+msgstr "Tyyli 3"
+
+#: includes/class-amv-admin.php:536
+msgid "Custom"
+msgstr "Mukautettu"
+
+#: includes/class-amv-admin.php:538
+msgid "Select a preset style or choose Custom to modify individual styling options."
+msgstr "Valitse valmiste-tyyli tai valitse Mukautettu muokataksesi yksittäisiä tyyliasetuksia."

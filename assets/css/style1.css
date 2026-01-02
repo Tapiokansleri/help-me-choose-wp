@@ -1,0 +1,140 @@
+/* Style 1 - Modern Card Design with Shadows */
+
+.amv-form-container {
+    width: 100% !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+.amv-step {
+    border: none !important;
+    border-radius: 12px !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    padding: 40px !important;
+    margin-bottom: 30px !important;
+}
+
+.amv-step-title {
+    color: #000000 !important;
+    font-weight: 600 !important;
+    font-size: 1.5em !important;
+    line-height: 1.3 !important;
+    margin-bottom: 15px !important;
+}
+
+.amv-step-description {
+    color: #666666 !important;
+    font-weight: 400 !important;
+    font-size: 1em !important;
+    line-height: 1.6 !important;
+}
+
+.amv-option {
+    border: none !important;
+    border-radius: 12px !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    padding: 25px !important;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1) !important;
+    transition: all 0.2s ease !important;
+}
+
+.amv-option:hover {
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-2px) !important;
+}
+
+.amv-option-selected {
+    border: 2px solid orange !important;
+}
+
+.amv-option-label {
+    color: #000000 !important;
+    font-weight: 600 !important;
+    font-size: 1.1em !important;
+    line-height: 1.4 !important;
+}
+
+.amv-option-description {
+    color: #666666 !important;
+    font-weight: 400 !important;
+    font-size: 0.95em !important;
+    line-height: 1.5 !important;
+}
+
+.amv-option-image img {
+    max-width: 300px !important;
+    height: auto !important;
+    border-radius: 8px !important;
+}
+
+/* Recommendation Results Styles */
+.amv-card-link {
+    text-decoration: none !important;
+}
+
+.amv-card-link:hover {
+    text-decoration: none !important;
+}
+
+.amv-content-card:hover .amv-card-link,
+.amv-product-card:hover .amv-card-link {
+    text-decoration: none !important;
+}
+
+.amv-card-excerpt,
+.amv-product-excerpt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.amv-reset-button {
+    background: none !important;
+    background-color: transparent !important;
+    color: #000000 !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    font-weight: 400 !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.amv-reset-button:hover {
+    background: none !important;
+    background-color: transparent !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    text-decoration: underline !important;
+}
+
+.amv-reset-button:active {
+    transform: none !important;
+}
+
+@media (max-width: 767px) {
+    .amv-form-container {
+        padding: 15px !important;
+    }
+    
+    .amv-step {
+        padding: 25px !important;
+        border-radius: 10px !important;
+    }
+    
+    .amv-option {
+        padding: 20px !important;
+        border-radius: 10px !important;
+    }
+    
+    .amv-option-image img {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+}
+

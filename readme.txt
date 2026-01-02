@@ -1,0 +1,51 @@
+=== Help me choose ===
+Contributors: tapiokauranen
+Tags: decision-tree, form, wizard, recommendation, product-selector
+Requires at least: 5.0
+Tested up to: 6.4
+Stable tag: 1.0.0
+Requires PHP: 7.4
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+A tool that helps customers to choose the right product or a service through an interactive decision tree.
+
+== Description ==
+
+This plugin provides a multi-step decision tree form that guides users through a series of questions to help them find the most suitable product or service.
+
+= Features =
+
+* Multi-step decision tree with conditional branching
+* AI-powered configuration wizard for easy setup
+* Customizable styling with preset styles
+* Recommendation system with support for pages, posts, products, and custom post types
+* Usage tracking and statistics
+* Responsive design for mobile and desktop
+* Translation ready (Finnish included)
+
+= Installation =
+
+1. Upload the plugin files to `/wp-content/plugins/auta-minua-valitsemaan/`
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Go to Tools → Help me choose to configure
+
+= Configuration =
+
+Use the Installation Wizard for quick setup with AI assistance, or manually configure steps and recommendations in the admin panel.
+
+== Changelog ==
+
+= 1.0.0 =
+* Initial release
+* Multi-step decision tree functionality
+* AI configuration wizard
+* Customizable styling options
+* Usage tracking and statistics
+* Import/Export functionality
+
+== Upgrade Notice ==
+
+= 1.0.0 =
+Initial release of Auta minua valitsemaan.
+

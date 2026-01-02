@@ -1,0 +1,26 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Create ZIP file
+        run: |
+          zip -r auta-minua-valitsemaan.zip . -x "*.git*" -x "*.github*" -x "*.DS_Store" -x "*.log" -x "node_modules/*"
+      
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: auta-minua-valitsemaan.zip
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

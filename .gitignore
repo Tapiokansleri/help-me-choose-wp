@@ -1,0 +1,28 @@
+# WordPress
+.DS_Store
+Thumbs.db
+
+# Compiled translation files
+*.mo
+
+# IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Node modules (if you add build tools later)
+node_modules/
+npm-debug.log
+
+# Build files
+dist/
+build/
+

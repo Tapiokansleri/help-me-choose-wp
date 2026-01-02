@@ -1,0 +1,55 @@
+/* Style 3 - Premium with Gold Accents */
+
+.amv-form-container {
+    width: 100% !important;
+    padding: 15px !important;
+}
+
+.amv-step {
+    border: 3px solid #d4af37 !important;
+    border-radius: 12px !important;
+    background-color: #fffef7 !important;
+    color: #333333 !important;
+    padding: 35px !important;
+}
+
+.amv-step-title {
+    color: #333333 !important;
+}
+
+.amv-step-description {
+    color: #333333 !important;
+}
+
+.amv-option {
+    border: 2px solid #d4af37 !important;
+    border-radius: 10px !important;
+    background-color: #ffffff !important;
+    color: #333333 !important;
+    padding: 22px !important;
+}
+
+.amv-option:hover {
+    background-color: #fff9e6 !important;
+}
+
+.amv-option-label {
+    color: #333333 !important;
+}
+
+.amv-option-description {
+    color: #333333 !important;
+}
+
+.amv-option-image img {
+    max-width: 280px !important;
+    height: auto !important;
+}
+
+@media (max-width: 767px) {
+    .amv-option-image img {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+}
+
