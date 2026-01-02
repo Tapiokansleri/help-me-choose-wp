@@ -3,7 +3,7 @@ Contributors: tapiokauranen
 Tags: decision-tree, form, wizard, recommendation, product-selector
 Requires at least: 5.0
 Tested up to: 6.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -36,6 +36,11 @@ Use the Installation Wizard for quick setup with AI assistance, or manually conf
 
 == Changelog ==
 
+= 1.0.3 =
+* Removed GitHub token configuration option
+* Simplified updater for public repositories only
+* Cleaner settings interface
+
 = 1.0.2 =
 * Added update checker in Settings tab with real-time version comparison
 * Added GitHub token support for private repositories
@@ -55,6 +60,9 @@ Use the Installation Wizard for quick setup with AI assistance, or manually conf
 * Import/Export functionality
 
 == Upgrade Notice ==
+
+= 1.0.3 =
+Simplified updater by removing GitHub token configuration. Plugin now works with public repositories only.
 
 = 1.0.2 =
 Enhanced update system with built-in update checker, GitHub token support for private repositories, and improved error handling.

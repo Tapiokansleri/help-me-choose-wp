@@ -67,6 +67,10 @@ GPL v2 or later
 
 See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
+### 1.0.3
+- Removed GitHub token configuration (simplified for public repositories)
+- Cleaner settings interface
+
 ### 1.0.2
 - Added update checker in Settings tab
 - Added GitHub token support for private repositories

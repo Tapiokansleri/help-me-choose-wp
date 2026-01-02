@@ -5,18 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] - 2024-12-XX
+
+### Removed
+- GitHub token configuration option (simplified for public repositories only)
+
+### Improved
+- Simplified updater code by removing private repository support
+- Cleaner settings interface
+
 ## [1.0.2] - 2024-12-XX
 
 ### Added
 - Update checker in Settings tab with real-time version comparison
-- GitHub token support for private repositories
 - "Check for Updates" button to force immediate update check
 - "Clear Update Cache" button to refresh cached version data
 - Improved updater error handling and debugging
 
 ### Improved
 - Enhanced GitHub API integration with better error messages
-- Updater now supports both public and private repositories
 - Better ZIP file detection from GitHub releases
 - Improved plugin basename matching for update detection
 

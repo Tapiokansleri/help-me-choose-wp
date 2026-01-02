@@ -101,25 +101,14 @@ class AMV_Admin {
     private function fetch_remote_version() {
         $api_url = 'https://api.github.com/repos/Tapiokansleri/help-me-choose-wp/releases/latest';
         
-        // Get GitHub token from config (optional, for private repos)
-        $config = AMV_Helper::get_config();
-        $github_token = isset($config['github_token']) ? $config['github_token'] : '';
-        
-        $headers = array(
-            'Accept' => 'application/vnd.github.v3+json',
-            'User-Agent' => 'WordPress/' . get_bloginfo('version'),
-        );
-        
-        // Add authentication header if token is provided
-        if (!empty($github_token)) {
-            $headers['Authorization'] = 'token ' . $github_token;
-        }
-        
         $response = wp_remote_get(
             $api_url,
             array(
                 'timeout' => 15,
-                'headers' => $headers,
+                'headers' => array(
+                    'Accept' => 'application/vnd.github.v3+json',
+                    'User-Agent' => 'WordPress/' . get_bloginfo('version'),
+                ),
             )
         );
         
@@ -1064,21 +1053,6 @@ class AMV_Admin {
                     <p class="description"><?php _e('When enabled, logged-in administrators will see debug information at the bottom of the form.', 'auta-minua-valitsemaan'); ?></p>
                 </td>
             </tr>
-            <tr>
-                <th><label><?php _e('GitHub Token (Optional)', 'auta-minua-valitsemaan'); ?></label></th>
-                <td>
-                    <?php
-                    $config = AMV_Helper::get_config();
-                    $github_token = isset($config['github_token']) ? esc_attr($config['github_token']) : '';
-                    ?>
-                    <input type="password" name="github_token" value="<?php echo $github_token; ?>" class="regular-text" placeholder="<?php _e('ghp_xxxxxxxxxxxx', 'auta-minua-valitsemaan'); ?>">
-                    <p class="description">
-                        <?php _e('Required only for private repositories. Create a Personal Access Token with "repo" scope at', 'auta-minua-valitsemaan'); ?> 
-                        <a href="https://github.com/settings/tokens" target="_blank">https://github.com/settings/tokens</a>.
-                        <?php _e('Leave empty if your repository is public.', 'auta-minua-valitsemaan'); ?>
-                    </p>
-                </td>
-            </tr>
         </table>
         
         <div class="amv-update-checker" style="margin-top: 30px; padding: 20px; background: #fff; border: 1px solid #ddd; border-radius: 4px;">
@@ -1509,7 +1483,6 @@ class AMV_Admin {
             'styles' => AMV_Helper::sanitize_styles($styles),
             'tracking_enabled' => isset($_POST['tracking_enabled']) ? '1' : '0',
             'debug_enabled' => isset($_POST['debug_enabled']) ? '1' : '0',
-            'github_token' => isset($_POST['github_token']) ? sanitize_text_field($_POST['github_token']) : '',
         );
         
         AMV_Helper::save_config($config);

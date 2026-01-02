@@ -46,33 +46,6 @@ class AMV_Updater {
         add_filter('pre_set_site_transient_update_plugins', array($this, 'check_update'));
         add_filter('plugins_api', array($this, 'plugin_info'), 10, 3);
         add_filter('upgrader_post_install', array($this, 'post_install'), 10, 3);
-        
-        // Add authentication header for private repo downloads
-        add_filter('http_request_args', array($this, 'add_auth_to_download'), 10, 2);
-    }
-    
-    /**
-     * Add authentication header to download requests for private repos
-     */
-    public function add_auth_to_download($args, $url) {
-        // Only modify requests to GitHub releases/assets
-        if (strpos($url, 'github.com') === false || strpos($url, '/releases/') === false) {
-            return $args;
-        }
-        
-        // Get GitHub token from config
-        $config = AMV_Helper::get_config();
-        $github_token = isset($config['github_token']) ? $config['github_token'] : '';
-        
-        if (!empty($github_token)) {
-            if (!isset($args['headers'])) {
-                $args['headers'] = array();
-            }
-            $args['headers']['Authorization'] = 'token ' . $github_token;
-            $args['headers']['Accept'] = 'application/octet-stream';
-        }
-        
-        return $args;
     }
     
     /**
@@ -238,25 +211,14 @@ class AMV_Updater {
         
         $api_url = sprintf('https://api.github.com/repos/%s/%s/releases/latest', $this->owner, $this->repo);
         
-        // Get GitHub token from config (optional, for private repos)
-        $config = AMV_Helper::get_config();
-        $github_token = isset($config['github_token']) ? $config['github_token'] : '';
-        
-        $headers = array(
-            'Accept' => 'application/vnd.github.v3+json',
-            'User-Agent' => 'WordPress/' . get_bloginfo('version'),
-        );
-        
-        // Add authentication header if token is provided
-        if (!empty($github_token)) {
-            $headers['Authorization'] = 'token ' . $github_token;
-        }
-        
         $response = wp_remote_get(
             $api_url,
             array(
                 'timeout' => 15,
-                'headers' => $headers,
+                'headers' => array(
+                    'Accept' => 'application/vnd.github.v3+json',
+                    'User-Agent' => 'WordPress/' . get_bloginfo('version'),
+                ),
             )
         );
         
@@ -300,25 +262,14 @@ class AMV_Updater {
     private function get_download_url() {
         $api_url = sprintf('https://api.github.com/repos/%s/%s/releases/latest', $this->owner, $this->repo);
         
-        // Get GitHub token from config (optional, for private repos)
-        $config = AMV_Helper::get_config();
-        $github_token = isset($config['github_token']) ? $config['github_token'] : '';
-        
-        $headers = array(
-            'Accept' => 'application/vnd.github.v3+json',
-            'User-Agent' => 'WordPress/' . get_bloginfo('version'),
-        );
-        
-        // Add authentication header if token is provided
-        if (!empty($github_token)) {
-            $headers['Authorization'] = 'token ' . $github_token;
-        }
-        
         $response = wp_remote_get(
             $api_url,
             array(
                 'timeout' => 15,
-                'headers' => $headers,
+                'headers' => array(
+                    'Accept' => 'application/vnd.github.v3+json',
+                    'User-Agent' => 'WordPress/' . get_bloginfo('version'),
+                ),
             )
         );
         
@@ -359,25 +310,14 @@ class AMV_Updater {
     private function get_remote_release_date() {
         $api_url = sprintf('https://api.github.com/repos/%s/%s/releases/latest', $this->owner, $this->repo);
         
-        // Get GitHub token from config (optional, for private repos)
-        $config = AMV_Helper::get_config();
-        $github_token = isset($config['github_token']) ? $config['github_token'] : '';
-        
-        $headers = array(
-            'Accept' => 'application/vnd.github.v3+json',
-            'User-Agent' => 'WordPress/' . get_bloginfo('version'),
-        );
-        
-        // Add authentication header if token is provided
-        if (!empty($github_token)) {
-            $headers['Authorization'] = 'token ' . $github_token;
-        }
-        
         $response = wp_remote_get(
             $api_url,
             array(
                 'timeout' => 15,
-                'headers' => $headers,
+                'headers' => array(
+                    'Accept' => 'application/vnd.github.v3+json',
+                    'User-Agent' => 'WordPress/' . get_bloginfo('version'),
+                ),
             )
         );
         
@@ -397,25 +337,14 @@ class AMV_Updater {
     private function get_changelog() {
         $api_url = sprintf('https://api.github.com/repos/%s/%s/releases/latest', $this->owner, $this->repo);
         
-        // Get GitHub token from config (optional, for private repos)
-        $config = AMV_Helper::get_config();
-        $github_token = isset($config['github_token']) ? $config['github_token'] : '';
-        
-        $headers = array(
-            'Accept' => 'application/vnd.github.v3+json',
-            'User-Agent' => 'WordPress/' . get_bloginfo('version'),
-        );
-        
-        // Add authentication header if token is provided
-        if (!empty($github_token)) {
-            $headers['Authorization'] = 'token ' . $github_token;
-        }
-        
         $response = wp_remote_get(
             $api_url,
             array(
                 'timeout' => 15,
-                'headers' => $headers,
+                'headers' => array(
+                    'Accept' => 'application/vnd.github.v3+json',
+                    'User-Agent' => 'WordPress/' . get_bloginfo('version'),
+                ),
             )
         );
         
